@@ -212,10 +212,10 @@ class ExpoMessage
             'badge'     =>  $this->badge,
             'ttl'       =>  $this->ttl,
             'data'      => $this->jsonData,
-        ]
+        ];
 
         if($this->channelId !== NULL){
-            $message['channelId'] = $this->channelId
+            $message['channelId'] = $this->channelId;
         }
 
         return $message;

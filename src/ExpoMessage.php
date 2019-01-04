@@ -18,7 +18,7 @@ class ExpoMessage
      *
      * @var string
      */
-    protected $title;
+    protected $title = NULL;
 
     /**
      * The sound to play when the recipient receives this notification.
@@ -216,6 +216,10 @@ class ExpoMessage
 
         if($this->channelId !== NULL){
             $message['channelId'] = $this->channelId;
+        }
+
+        if($this->title !== NULL){
+            $message['title'] = $this->title;
         }
 
         return $message;

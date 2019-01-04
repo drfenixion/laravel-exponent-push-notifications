@@ -14,6 +14,13 @@ class ExpoMessage
     protected $body;
 
     /**
+     * The message title.
+     *
+     * @var string
+     */
+    protected $title;
+
+    /**
      * The sound to play when the recipient receives this notification.
      *
      * @var string|null
@@ -40,7 +47,7 @@ class ExpoMessage
      *
      * @var string
      */
-    protected $channelId = 'Default';
+    protected $channelId = NULL;
 
     /**
      * The json data attached to the message.
@@ -81,6 +88,20 @@ class ExpoMessage
     public function body(string $value)
     {
         $this->body = $value;
+
+        return $this;
+    }
+
+    /**
+     * Set the message title.
+     *
+     * @param string $value
+     *
+     * @return $this
+     */
+    public function title(string $value)
+    {
+        $this->title = $value;
 
         return $this;
     }
@@ -184,13 +205,19 @@ class ExpoMessage
      */
     public function toArray()
     {
-        return [
+
+        $message = [
             'body'      =>  $this->body,
             'sound'     =>  $this->sound,
             'badge'     =>  $this->badge,
             'ttl'       =>  $this->ttl,
-            'channelId' =>  $this->channelId,
             'data'      => $this->jsonData,
-        ];
+        ]
+
+        if($this->channelId !== NULL){
+            $message['channelId'] = $this->channelId
+        }
+
+        return $message;
     }
 }

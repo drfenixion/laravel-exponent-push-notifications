@@ -181,7 +181,7 @@ Create the channel in Expo app and in-app listener for the push in componentWill
 
     if (Platform.OS === 'android') {
       Notifications.createChannelAndroidAsync('reminders', {
-        name: 'Напоминания о встречах',
+        name: 'Reminders',
         sound: true,
         priority: 'max',
         vibrate: [0, 250, 250, 250],

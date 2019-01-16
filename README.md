@@ -1,3 +1,17 @@
+#INSTALL
+Add to composer.json
+```
+"require": {
+    "drfenixion/laravel-exponent-push-notifications": "1.5.1",
+},
+"repositories": [
+    {
+        "url": "https://github.com/drfenixion/laravel-exponent-push-notifications.git",
+        "type": "git"
+    }
+],
+```
+
 #EXAMPLE OF USING THIS FORK
 ```
 use App\Notifications\MeetReminder;
